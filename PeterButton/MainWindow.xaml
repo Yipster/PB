@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PeterButton"
         mc:Ignorable="d"
-        Title="MainWindow" Height="530px" Width="800px" WindowStyle="None" ResizeMode="NoResize">
+        Title="MainWindow" Height="450px" Width="800px" WindowStyle="None" ResizeMode="NoResize">
     <Window.Resources>
         <Style x:Key="MyButtonStyle" TargetType="Button">
             <Setter Property="Template">
@@ -18,14 +18,35 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Storyboard x:Key="ClassroomStoryboard" x:Name="ClassroomStoryboard"/>
+        <Storyboard x:Key="ClassroomStoryboard" x:Name="ClassroomStoryboard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="BG">
+                <EasingDoubleKeyFrame KeyTime="0:0:5" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:15" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="BG">
+                <EasingDoubleKeyFrame KeyTime="0:0:5" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:15" Value="-362"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
     </Window.Resources>
     <Canvas x:Name="Container">
-        <local:GifImage x:Name="Bird" GifSource="C:\Users\Brandon\Documents\Visual Studio 2015\Projects\PeterButton\PeterButton\Bird.gif"  Height="354" Width="500" Canvas.Left="300" Canvas.Top="121.5"/>
+
         <Button Style="{StaticResource MyButtonStyle}"  x:Name="ResetBtn" Content="" Height="450" Width="800" Click="ResetBtn_Click" BorderBrush="Black" Foreground="Black" RenderTransformOrigin="0.5,0.5">
             <Button.Background>
                 <ImageBrush ImageSource="empty classroom.jpg"></ImageBrush>
             </Button.Background>
         </Button>
+        <Grid x:Name="BG" Background="White" Height="400px" Width="210" Canvas.Top="500" Canvas.Left="300" RenderTransformOrigin="0.5,0.5">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <Image Name="nexus" Source="nex2.png" Margin="-12.5,-36.157,-10,-10"></Image>
+            <local:GifImage x:Name="Bird" GifSource="C:\Users\Brandon\Documents\Visual Studio 2015\Projects\PeterButton\PeterButton\Bird.gif" Margin="4,99.5,6,158.9" />
+        </Grid>
     </Canvas>
 </Window>
