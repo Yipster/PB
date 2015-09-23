@@ -18,17 +18,11 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Storyboard x:Key="ClassroomStoryboard" x:Name="ClassroomStoryboard">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ClassroomImg">
-                <EasingDoubleKeyFrame KeyTime="0:0:5" Value="1"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:15" Value="0"/>
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
+        <Storyboard x:Key="ClassroomStoryboard" x:Name="ClassroomStoryboard"/>
     </Window.Resources>
     <Canvas x:Name="Container">
         <local:GifImage x:Name="Bird" GifSource="C:\Users\Brandon\Documents\Visual Studio 2015\Projects\PeterButton\PeterButton\Bird.gif"  Height="354" Width="500" Canvas.Left="300" Canvas.Top="121.5"/>
-        <Image  x:Name="ClassroomImg" Source="empty classroom.jpg" Width="800"></Image>
-        <Button Style="{StaticResource MyButtonStyle}"  x:Name="ResetBtn" Content="" Height="75" Width="450.5" Click="ResetBtn_Click" BorderBrush="Black" Foreground="Black" RenderTransformOrigin="0.5,0.5" Canvas.Top="455" Canvas.Left="183">
+        <Button Style="{StaticResource MyButtonStyle}"  x:Name="ResetBtn" Content="" Height="450" Width="800" Click="ResetBtn_Click" BorderBrush="Black" Foreground="Black" RenderTransformOrigin="0.5,0.5">
             <Button.Background>
                 <ImageBrush ImageSource="empty classroom.jpg"></ImageBrush>
             </Button.Background>
