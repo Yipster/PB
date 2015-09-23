@@ -19,13 +19,13 @@
             </Setter>
         </Style>
         <Storyboard x:Key="ClassroomStoryboard" x:Name="ClassroomStoryboard">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="BG">
-                <EasingDoubleKeyFrame KeyTime="0:0:5" Value="0"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:15" Value="1"/>
-            </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="BG">
-                <EasingDoubleKeyFrame KeyTime="0:0:5" Value="0"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:15" Value="-362"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:12" Value="-426"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ResetBtn">
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:12" Value="0.3"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
@@ -36,17 +36,17 @@
                 <ImageBrush ImageSource="empty classroom.jpg"></ImageBrush>
             </Button.Background>
         </Button>
-        <Grid x:Name="BG" Background="White" Height="400px" Width="210" Canvas.Top="500" Canvas.Left="300" RenderTransformOrigin="0.5,0.5">
-            <Grid.RenderTransform>
+        <Canvas x:Name="BG" Background="White" Height="400px" Width="220" Canvas.Top="500" Canvas.Left="300" RenderTransformOrigin="0.5,0.5">
+            <Canvas.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
                     <RotateTransform/>
                     <TranslateTransform/>
                 </TransformGroup>
-            </Grid.RenderTransform>
-            <Image Name="nexus" Source="nex2.png" Margin="-12.5,-36.157,-10,-10"></Image>
-            <local:GifImage x:Name="Bird" GifSource="C:\Users\Brandon\Documents\Visual Studio 2015\Projects\PeterButton\PeterButton\Bird.gif" Margin="4,99.5,6,158.9" />
-        </Grid>
+            </Canvas.RenderTransform>
+            <Image Name="nexus" Source="nex2.png" Canvas.Left="-6.5" Canvas.Top="-36.157"/>
+            <local:GifImage x:Name="Bird" GifSource="C:\Users\Brandon\Documents\Visual Studio 2015\Projects\PeterButton\PeterButton\Bird.gif" Height="138.768" Canvas.Left="4" Canvas.Top="99.5" Width="196" />
+        </Canvas>
     </Canvas>
 </Window>
