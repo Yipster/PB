@@ -117,7 +117,7 @@
     <Resource Include="comp.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="nex2.png" />
+    <Resource Include="nexus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

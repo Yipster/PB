@@ -27,6 +27,10 @@
                 <EasingDoubleKeyFrame KeyTime="0:0:5" Value="0"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:15" Value="-362"/>
             </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ResetBtn">
+                <EasingDoubleKeyFrame KeyTime="0:0:5" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:15" Value="0.5"/>
+            </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
     <Canvas x:Name="Container">
@@ -45,8 +49,8 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </Grid.RenderTransform>
-            <Image Name="nexus" Source="nex2.png" Margin="-12.5,-36.157,-10,-10"></Image>
             <local:GifImage x:Name="Bird" GifSource="C:\Users\Brandon\Documents\Visual Studio 2015\Projects\PeterButton\PeterButton\Bird.gif" Margin="4,99.5,6,158.9" />
+            <Image x:Name="nexus" Source="nex2.png" Margin="-12,-26,-15,-45"/>
         </Grid>
     </Canvas>
 </Window>
