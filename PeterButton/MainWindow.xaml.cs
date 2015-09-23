@@ -32,7 +32,7 @@ namespace PeterButton
             var sb = this.Resources["ClassroomStoryboard"];
             s = sb as Storyboard;
             s.Begin();
-            //makeCloud();
+            makeCloud();
         }
 
 
@@ -52,7 +52,7 @@ namespace PeterButton
 
         public void makeCloud()
         {
-            DoubleAnimation da = new DoubleAnimation(-300, 300, new Duration(new TimeSpan(0, 0, 15)));
+            DoubleAnimation da = new DoubleAnimation(-300, 600, new Duration(new TimeSpan(0, 0, 15)));
             Storyboard story = new Storyboard { /*RepeatBehavior = RepeatBehavior.Forever*/ };
             Storyboard.SetTargetProperty(da, new PropertyPath("(Canvas.Left)"));
             story.Children.Add(da);
@@ -63,7 +63,7 @@ namespace PeterButton
                 cloud.Img.Source = new BitmapImage(new Uri(@"C:\Users\Brandon\Documents\Visual Studio 2015\Projects\PeterButton\PeterButton\comp.png"));
             }
             catch (Exception e) { }
-            BG.Children.Add(cloud);
+            Container.Children.Add(cloud);
             story.Completed += Completed;
             
             cloud.BeginStoryboard(story);
