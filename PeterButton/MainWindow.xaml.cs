@@ -30,6 +30,7 @@ namespace PeterButton
         {
             InitializeComponent();
             KeyUp += Escape;
+
             var sb = this.Resources["ClassroomStoryboard"];
             s = sb as Storyboard;
             s.Begin();
@@ -41,11 +42,6 @@ namespace PeterButton
         {
             makeCloud(cloud2);
             makeCloud(cloud3);
-        }
-
-        public void Mp3Media()
-        {
-
         }
 
         //Event: Escape KeyUp causes application to close
@@ -113,11 +109,11 @@ namespace PeterButton
             int num = 0;
             if (i == 1)
             {
-                num = rnd.Next(5, 400);
+                num = rnd.Next(0, 300);
             }
             if (i == 2)
             {
-                num = rnd.Next(1, 4);
+                num = rnd.Next(1, 3);
             }
             if (i == 3)
             {
@@ -125,5 +121,10 @@ namespace PeterButton
             }
             return num;
         }
+       /* private void Completed(object sender, EventArgs e)
+        {
+            Container.Children.Remove(cloud);
+            makeCloud();
+        }*/
     }
 }
