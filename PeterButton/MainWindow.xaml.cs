@@ -23,20 +23,26 @@ namespace PeterButton
     {
 
         Storyboard s;
-        cloud cloud;
+        cloud cloud1;
         cloud cloud2;
         cloud cloud3;
         public MainWindow()
         {
             InitializeComponent();
-            this.KeyUp += Escape;
+            KeyUp += Escape;
 
             var sb = this.Resources["ClassroomStoryboard"];
             s = sb as Storyboard;
             s.Begin();
-            makeCloud();
+            makeCloud(cloud1);
+            helper(cloud2);
         }
 
+        public void helper(cloud cloud2)
+        {
+            makeCloud(cloud2);
+            makeCloud(cloud3);
+        }
 
         //Event: Escape KeyUp causes application to close
         private void Escape(object sender, KeyEventArgs e)
@@ -52,7 +58,7 @@ namespace PeterButton
             s.Seek(TimeSpan.Zero);
         }
 
-        public void makeCloud()
+        public void makeCloud(cloud cloud)
         {
             
             DoubleAnimation da = new DoubleAnimation(-100, 800, new Duration(new TimeSpan(0, 0, RandomIntGenerator(3))));
@@ -62,13 +68,17 @@ namespace PeterButton
 
             cloud = new cloud();
             try {
-                picSelector(RandomIntGenerator(2));
+                picSelector(RandomIntGenerator(2), cloud);
             }
             catch (Exception e) { }
             int y = RandomIntGenerator(1);
             Canvas.SetTop(cloud, y);
             Container.Children.Add(cloud);
-            story.Completed += Completed;
+            story.Completed += (s,  eArgs) =>
+            {
+                Container.Children.Remove(cloud);
+                makeCloud(cloud);
+            };
             
             cloud.BeginStoryboard(story);
             
@@ -76,18 +86,18 @@ namespace PeterButton
 
 
         //Selects which picture to be used as the cloud
-        public void picSelector(int i)
+        public void picSelector(int i, cloud cloud)
         {
             switch(i)
             {
                 case 1:
-                    cloud.Img.Source = new BitmapImage(new Uri(@"C:\Users\Brandon\Documents\Visual Studio 2015\Projects\PeterButton\PeterButton\cat.jpg"));
+                    cloud.Img.Source = new BitmapImage(new Uri(@"pack://application:,,,/Resources/nexuscloud.png"));
                     break;
                 case 2:
-                    cloud.Img.Source = new BitmapImage(new Uri(@"C:\Users\Brandon\Documents\Visual Studio 2015\Projects\PeterButton\PeterButton\cat.jpg"));
+                    cloud.Img.Source = new BitmapImage(new Uri(@"pack://application:,,,/Resources/honkscloud.png"));
                     break;
                 case 3:
-                    cloud.Img.Source = new BitmapImage(new Uri(@"C:\Users\Brandon\Documents\Visual Studio 2015\Projects\PeterButton\PeterButton\cat.jpg"));
+                    cloud.Img.Source = new BitmapImage(new Uri(@"pack://application:,,,/Resources/catcloud.png"));
                     break;
 
             } 
@@ -111,10 +121,10 @@ namespace PeterButton
             }
             return num;
         }
-        private void Completed(object sender, EventArgs e)
+       /* private void Completed(object sender, EventArgs e)
         {
             Container.Children.Remove(cloud);
             makeCloud();
-        }
+        }*/
     }
 }

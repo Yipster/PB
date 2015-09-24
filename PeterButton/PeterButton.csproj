@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -92,7 +93,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -108,22 +109,15 @@
     <Resource Include="Bird.gif" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="cat.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="empty classroom.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="comp.png" />
+    <Resource Include="Resources\catcloud.png" />
+    <Resource Include="Resources\honkscloud.png" />
+    <Resource Include="Resources\nexuscloud.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="blue-cloud-hi.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="cat.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="cloud template.png" />
+    <Resource Include="Resources\cat.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

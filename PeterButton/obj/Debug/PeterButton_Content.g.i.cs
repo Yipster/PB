@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("cloud%20template.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/catcloud.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/honkscloud.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/nexuscloud.png")]
 
 
